@@ -1,0 +1,38 @@
+// =========================================
+// SPファーストの設定
+// =========================================
+
+// ブレークポイント
+$breakpoints: (
+    "sp": "screen and (max-width: 767px)",
+    "tb": "screen and (min-width: 768px) and (max-width: 1024px)",
+    "pc": "screen and (min-width: 768px)",
+) !default;
+
+// mixin
+@mixin mq($breakpoint: pc) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// =========================================
+// PCファーストの設定
+// =========================================
+
+// ブレークポイント
+// $breakpoint: 'sp';
+
+// $breakpoints: (
+//     "sp": "screen and (max-width: 767px)",
+//     "tb": "screen and (min-width: 768px) and (max-width: 1024px)",
+//     "pc": "screen and (min-width: 768px)",
+// );
+
+// メディアクエリー
+// @mixin mq($breakpoint: sp) {
+//     @media #{map-get($breakpoints,$breakpoint)} {
+//         @content;
+//     }
+// }
