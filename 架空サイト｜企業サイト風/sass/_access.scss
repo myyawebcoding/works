@@ -1,0 +1,232 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+
+// .access {
+//     padding: 0;
+//     position: relative;
+
+//     .section-title {
+//         color: #fff;
+//         text-align: left;
+//     }
+// }
+
+// .access__content-box {
+
+// }
+
+// .access-background {
+//     width: 980px;
+//     max-width: 100%;
+//     height: 504px;
+//     background: variables.$main-color;
+//     margin-right: auto;
+//     color: #fff;
+//     padding: 120px 100px;
+//     position: absolute;
+// }
+
+// .access-address {
+//     margin-top: 60px;
+//     line-height: 1.5;
+
+//     @include mixins.mq("sp") {
+//         margin-top: 40px;
+//         font-size: 14px;
+//     }
+// }
+
+// .access-map {
+//     width: 726px;
+//     max-width: 100%;
+//     position: relative;
+//     top: 120px;
+//     margin-left: auto;
+//     right: 40px;
+
+//     @include mixins.mq("sp") {
+//         position: static;
+//     }
+// }
+
+// .iframe-wrap {
+//     width: 100%;
+//     padding-top: 520 / 726 * 100%;
+
+//     iframe {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
+
+// .access-button {
+//     margin-top: 32px;
+//     position: absolute;
+//     top: 320px;
+//     left:100px;
+
+//     @include mixins.mq("sp") {
+//         margin-top: 24px;
+//     }
+
+//     .util-link {
+//         color: #fff;
+//         border: 1px solid #FFFFFF;
+//         width: 100%;
+//         max-width: 314px;
+//         padding: 20px 0;
+//         font-size: 20px;
+//         text-align: center;
+//     }
+// }
+
+
+
+
+
+
+
+.access {
+    padding: 0;
+    // position: relative;
+
+    .section-title {
+        color: #fff;
+        text-align: left;
+    }
+}
+
+.access-background {
+    width: 980px;
+    max-width: 100%;
+    height: 504px;
+    background: variables.$main-color;
+    margin-right: auto;
+    color: #fff;
+    padding: 120px 100px;
+    // position: absolute;
+    z-index: 1;
+
+    @include mixins.mq("sp") {
+        padding: 40px 16px 60px;
+        height: 574px;
+        max-height: auto;
+    }
+}
+
+.access-content-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: -200px;
+    margin-left: 100px;
+    margin-right: 40px;
+    max-width: 100%;
+    z-index: 2;
+    color: #fff;
+
+    @include mixins.mq("sp") {
+        display: block;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+        width: calc(100% - 2 * 16px);  // 40pxは左右のパディングの合計分引く
+        margin: 0 auto;
+        margin-top: -363px;
+        
+    }
+}
+
+.access-content__left {
+    flex: 0 0 314px;
+}
+
+.access-content__right {
+    flex: 0 1 826px;
+    margin-top: -184px;
+    margin-left: 100px;
+
+    @include mixins.mq("sp") {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+}
+
+.access-address {
+    margin-top: 60px;
+    line-height: 1.5;
+
+    @include mixins.mq("sp") {
+        margin-top: 40px;
+        font-size: 14px;
+    }
+}
+
+.access-map {
+    max-width: 726px;
+    position: relative;
+    // top: 120px;
+    // margin-left: 100px;
+    // right: 40px;
+    z-index: 2;
+
+    // @include mixins.mq("sp") {
+    //     position: static;
+    // }
+}
+
+.iframe-wrap {
+    width: 100%;
+    padding-top: 520 / 726 * 100%;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.access-button {
+    // margin-top: 32px;
+    // position: absolute;
+    // top: 320px;
+    // left:100px;
+
+    // @include mixins.mq("sp") {
+    //     margin-top: 24px;
+    // }
+
+    // .util-link {
+    //     color: #fff;
+    //     border: 1px solid #FFFFFF;
+    //     width: 100%;
+    //     max-width: 314px;
+    //     padding: 20px 0;
+    //     font-size: 20px;
+    //     text-align: center;
+    // }
+
+    margin-top: 17px;
+
+    .util-link {
+        color: #fff;
+        border: 1px solid #FFFFFF;
+        width: 100%;
+        max-width: 314px;
+        padding: 20px 0;
+        font-size: 20px;
+        text-align: center;
+
+        &:hover {
+            background: #FFFFFF;
+            color: variables.$main-color;
+        }
+    }
+}

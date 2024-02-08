@@ -1,0 +1,104 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+
+.footer {
+    width: 100%;
+    padding: 60px 0;
+    background: variables.$main-color;
+    color: #fff;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2 * 40px);  
+    max-width: 960px;
+    margin: 0 auto ;
+
+    @include mixins.mq("sp") {
+        display: block;
+        text-align: center;
+        width: calc(100% - 2 * 16px);  
+    }
+}
+
+.footer__left {
+
+}
+
+.footer-sns-list {
+    text-align: center;
+
+}
+
+.footer-sns-item {
+    display: inline-block;
+
+    & + & {
+        margin-left: 32px;
+
+        @include mixins.mq("sp") {
+            margin-left: 50px;
+        }
+    }
+}
+
+.footer-sns-item-link {
+    color: #fff;
+    opacity: 0.6;
+    font-size: 36px;
+    display: block;
+}
+
+
+.footer__info {
+    margin-top: 40px;
+
+    @include mixins.mq("sp") {
+        margin-top: 42px;
+    }
+}
+
+.footer__info__text {
+    @include mixins.mq("sp") {
+        font-size: 14px;
+    }
+
+    & + & {
+        margin-top: 24px;
+
+        @include mixins.mq("sp") {
+            margin-top: 26px;
+        }
+    }
+}
+
+.footer__right {
+
+    @include mixins.mq("sp") {
+        margin-top: 40px;
+    }
+}
+
+.footer__logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #E3E3E3;
+
+    @include mixins.mq("sp") {
+        font-size: 32px;
+    }
+}
+
+.footer-copy {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 10px;
+    opacity: 0.6;
+
+    @include mixins.mq("sp") {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 12px;
+    }
+}

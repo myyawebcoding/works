@@ -1,0 +1,200 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+
+// .comments {
+//     position: relative;
+
+//     .section-title {
+//         color: variables.$font-color;
+//         text-align-last: left;
+//     }
+// }
+
+// .comments-background {
+//     width: 980px;
+//     max-width: 100%;
+//     height: 576px;
+//     background: variables.$main-color;
+//     margin-right: auto;
+//     position: absolute;
+//     bottom: -118px;
+
+//     @include mixins.mq(sp) {
+//         bottom: -118px;
+//     }
+// }
+
+// .comments__box {
+//     width: calc(100% - 2 * 40px);  // 40pxは左右のパディングの合計分引く
+//     max-width: 1200px;
+//     display: flex;
+//     margin: auto;
+//     position: relative;
+//     align-items: center;
+
+//     @include mixins.mq(tab) {
+//         display: block;
+//     }
+
+//     @include mixins.mq(sp) {
+//         display: block;
+//         width: calc(100% - 2 * 16px);  
+//     }
+// }
+
+// .comments__left {
+//     width: 666px;
+//     height: 604px;
+//     background: #fff;
+//     padding: 120px 60px;
+
+//     @include mixins.mq(tab) {
+//         width: 100%;
+//         height: auto;
+//     }
+
+//     @include mixins.mq(sp) {
+//         width: 100%;
+//         height: auto;
+//         padding: 40px 20px;
+//     }
+// }
+
+// .comments__left__items {
+//     margin-top: 60px;
+// }
+
+// .comments__left__item {
+//     display: flex;
+
+//     & + & {
+//         margin-top: 60px;
+//     }    
+// }
+
+// .comments__left__img-box {
+//     flex: 0 0 100px;
+
+//     @include mixins.mq(sp) {
+//         flex: 0 0 60px;
+//     }
+// }
+
+// .comments__left__text {
+//     flex: 0 1 100%;
+//     margin-left: 32px;
+//     line-height: 1.714;
+
+//     @include mixins.mq(sp) {
+//         font-size: 14px;
+//     }
+// }
+
+// .comments__right {
+//     width: 534px;
+//     height: 444px;
+// }
+
+
+
+
+
+.comments {
+
+    .section-title {
+        color: variables.$font-color;
+        text-align-last: left;
+        font-size: 30px;
+    }
+}
+
+.comments-background {
+    width: 980px;
+    max-width: 100%;
+    height: 576px;
+    background: variables.$main-color;
+    margin-right: auto;
+    z-index: 1;
+    margin-top: -460px;
+
+    @include mixins.mq(sp) {
+        height: 425px;
+        margin-top: -372px;
+    }
+}
+
+.comments__box {
+    width: calc(100% - 2 * 40px);  // 40pxは左右のパディングの合計分引く
+    max-width: 1200px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    z-index: 2;
+
+    @include mixins.mq(sp) {
+        width: calc(100% - 2 * 16px);
+    }
+}
+
+.comments__left {
+    width: 666px;
+    height: 604px;
+    background: #fff;
+    padding: 120px 60px;
+
+    @include mixins.mq(tab) {
+        width: 100%;
+        height: auto;
+    }
+
+    @include mixins.mq(sp) {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+    }
+}
+
+.comments__left__items {
+    margin-top: 60px;
+
+    @include mixins.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.comments__left__item {
+    display: flex;
+
+    & + & {
+        margin-top: 60px;
+
+        @include mixins.mq(sp) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.comments__left__img-box {
+    flex: 0 0 100px;
+
+    @include mixins.mq(sp) {
+        flex: 0 0 60px;
+    }
+}
+
+.comments__left__text {
+    flex: 0 1 100%;
+    margin-left: 32px;
+    line-height: 1.714;
+
+    @include mixins.mq(sp) {
+        font-size: 14px;
+        line-height: 1.428;
+        margin-left: 20px;
+    }
+}
+
+.comments__right {
+    width: 534px;
+    height: 444px;
+}

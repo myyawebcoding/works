@@ -1,0 +1,135 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+@use 'access' as access;
+@use 'comments' as comments;
+@use 'contact-us' as contact_us;
+@use 'footer' as footer;
+@use 'header' as header;
+@use 'news' as news;
+@use 'price' as price;
+@use 'Q&A' as q_and_a;
+@use 'results' as results;
+@use 'service' as service;
+@use 'top' as top;
+
+
+
+
+// 共通
+@include mixins.mq(sp) {
+    .is-pc {
+        display: none;
+    }
+}
+
+@include mixins.mq(tab) {
+    .is-pc {
+        display: none;
+    }
+    
+    .is-sp {
+        display: none;
+    }
+}
+
+@include mixins.mq(pc) {
+    .is-sp {
+        display: none;
+    }
+}
+
+body {
+    font-size: 16px;
+    color: variables.$font-color;
+    font-family: Montserrat,"游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    line-height: 1.188;
+    background: #F3F3F3;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+	text-decoration: none;
+    color: variables.$font-color;
+    cursor: pointer;
+}
+
+.inner {
+    // max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: variables.$font-color;
+
+    @include mixins.mq("sp") {
+        font-size: 30px;
+    }
+}
+
+.util-link {
+    display: inline-block;
+    border: 1px solid #707070;
+    padding: 20px 80px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    width: 100%;
+}
+
+
+// * {
+//     outline: 2px solid blue;
+// }
+
+
+
+// トップへ戻るボタン
+.to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+    z-index: 100;
+
+    @include mixins.mq("sp") {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    @include mixins.mq("sp") {
+        margin-top: 22px;
+    }
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    a {
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        img {
+            width: 50px;
+
+            @include mixins.mq("sp") {
+                width: 40px;
+            }
+        }
+    }
+}

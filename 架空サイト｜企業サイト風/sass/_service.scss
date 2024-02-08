@@ -1,0 +1,100 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+
+.service {
+    // 画面幅が1280pxを超えた時に広がりすぎないようにする
+    max-width: 1280px; // 追加
+    margin: 0 auto; // 追加
+    position: relative; // 追加
+
+    .section-title {
+        color: #fff;
+        padding-top: 60px;
+        position: relative;
+
+        @include mixins.mq("sp") {
+            padding-top: 40px;
+        }
+    }
+}
+
+.service-background {
+    background: variables.$main-color;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+
+}
+
+.service-container {
+    width: calc(100% - 2 * 40px);  // 40pxは左右のパディングの合計分引く
+    max-width: 960px;
+    margin: 60px auto 0;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 5px 12px rgba(62, 62, 62, 0.2);
+    position: relative;
+    top: 4px;
+
+    @include mixins.mq("sp") {
+        width: calc(100% - 2 * 16px);
+    }
+}
+
+.service-items {
+    padding: 60px 45px;
+    display: flex;
+
+    @include mixins.mq("sp") {
+        display: block;
+        padding: 40px 16px;
+    }
+}
+
+.service-item {
+    width: calc(33.3% - 90px * 2 / 3);
+
+    @include mixins.mq("sp") {
+        width: 100%;
+    }
+
+    &:not(:first-child) {
+        margin-left: 90px;
+
+        @include mixins.mq("sp") {
+            margin-left: 0;
+            margin-top: 40px;
+        }
+    }
+
+
+}
+
+.service-item__img-box {
+    width: 52px;
+    height: 52px;
+    margin: 10px auto 0;
+
+    
+}
+
+.service-item__img {
+
+}
+
+.service-item__title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.4;
+    margin-top: 9px;
+    letter-spacing: 4px;
+}
+
+.service-item__text {
+    font-size: 14px;
+    margin-top: 13px;
+    line-height: 1.714;
+}
+

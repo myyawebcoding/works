@@ -1,0 +1,137 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+
+.news {
+    @include mixins.mq("sp") {
+        position: relative;
+        top: -60px;
+
+        &.section {
+            padding: 0;
+        }
+    }
+}
+
+.news-container {
+    background: #fff;
+    margin: 0 auto;
+    width: calc(100% - 2 * 40px);  // 40pxは左右のパディングの合計分引く
+    max-width: 1200px;
+    padding: 60px 40px 45px;
+    box-shadow: 0 5px 12px rgba(62, 62, 62, 0.2);
+
+    @include mixins.mq("sp") {
+        width: calc(100% - 2 * 16px);
+        padding: 60px 0 45px;
+    }
+}
+
+
+.news-items {
+    width: 1080px;
+    max-width: 100%;
+    margin: 60px auto 40px;
+}
+
+.news-item__link {
+    display: block;
+
+    &:hover {
+        background: #4973FF1A;
+    }
+}
+
+.news-item__link:last-child .news-item {
+    border-bottom: 1px solid #CECDCD;
+}
+
+.news-item {
+    display: flex;
+    border-top: 1px solid #CECDCD;
+    padding: 34px 83px 40.5px 0;
+    position: relative;
+    background: transparent;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 51.5%;
+        right: -0.5px;
+        transform: translateY(-50%);
+        background: url(../img/PC/news-arrow-1.png) no-repeat center center / contain;
+        width: 43px;
+        height: 24px;
+    }
+
+    @include mixins.mq("sp") {
+        display: block;
+        padding-left: 16px;
+        padding-right: 55px;
+    }
+}
+
+
+
+.news-item__head {
+    display: flex;
+    align-items: center;
+}
+
+.news-item__date {
+    font-size: 18px;
+    width: 98px;
+    letter-spacing: 0.38px;
+
+    @include mixins.mq("sp") {
+        font-size: 14px;
+    }
+}
+
+.news-item__label {
+    font-size: 14px;
+    background: #fff;
+    border: 2px solid #3B69FF;
+    border-radius: 50px;
+    padding: 8px 30px;
+    margin-left: 40px;
+    width: 121px;
+    height: 32px;
+    letter-spacing: 0.23px;
+
+    @include mixins.mq("sp") {
+        font-size: 12px;
+        width: 81px;
+        height: 20px;
+        margin-left: 24px;
+        padding: 4px 14px;
+    }
+}
+
+.news-item__body {
+    font-size: 18px;
+    margin-left: 40px;
+    width: calc(100% - 259px);
+    letter-spacing: 0.45px;
+    line-height: 1.555;
+
+    @include mixins.mq("sp") {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 12px;
+        font-size: 14px;
+    }
+}
+
+.news-button {
+    text-align: center;
+    width: 236px;
+    margin: 0 auto;
+
+    .util-link {
+        &:hover {
+            background: variables.$main-color;
+            color: #fff;
+        }
+    }
+}
+

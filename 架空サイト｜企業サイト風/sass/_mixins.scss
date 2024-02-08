@@ -1,0 +1,21 @@
+@use 'variables' as variables;
+
+
+
+// ブレークポイント
+$breakpoint: 'sp';
+
+$breakpoints: (
+    "sp":"(max-width:767px)",
+    "tab":"(min-width:768px) and (max-width: #{variables.$layout-width-inner - 1px})",
+    "pc":"(min-width: #{variables.$layout-width-inner})",
+    // "tab":"(min-width:768px) and (max-width: #{$layout-width-inner - 1px})",
+    // "pc":"(min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints,$breakpoint)} {
+        @content;
+    }
+}

@@ -1,0 +1,133 @@
+@use 'mixins' as mixins;
+
+.FAQs {
+    background: url(../img/PC/qa-bg.png) no-repeat center center/cover;
+    width: 100%;
+    height: 952px;
+    padding-top: 60px;
+
+    @include mixins.mq("sp") {
+        height: 821px;
+    }
+
+    .qa-inner {
+        width: calc(100% - 2 * 40px);  // 40pxは左右のパディングの合計分引く
+        max-width: 1200px;
+        padding: 0;
+        margin: 0 auto;
+
+        @include mixins.mq("sp") {
+            width: calc(100% - 2 * 16px);  
+        }
+    }
+}
+
+.qa-items {
+    width: 612px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-top: 60px;
+
+    @include mixins.mq("sp") {
+        margin: 40px auto 0;
+    }
+
+    @include mixins.mq("tab") {
+        margin: 60px auto 0;
+    }
+}
+
+.qa-item {
+    &:nth-child(n + 2) {
+        margin-top: 33px;
+
+        @include mixins.mq("sp") {
+            margin-top: 24px;
+        }
+    }
+}
+
+.qa-box {
+    background: #fff;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.qa-box__q {
+    font-weight: bold;
+    padding-left: 40px;
+    position: relative;
+    letter-spacing: 0.4px;
+
+    &::before {
+        content: "Q";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        // Qの丸
+        background: #3B69FF;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        line-height: 24px;
+    }
+}
+
+
+
+.qa-box__icon {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.is-open {
+        .qa-box__bar2 {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.qa-box__bar1 {
+    width: 17px;
+    height: 2px;
+    background: #3B69FF;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.qa-box__bar2 {
+    width: 2px;
+    height: 17px;
+    background: #3B69FF;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.qa-box__a {
+    margin-top: 20px;
+    background: #3B69FF33;
+    border-radius: 4px;
+    padding: 12px 16px;
+    display: none;
+}
+
+.qa-box__content {
+    line-height: 1.5;
+
+    @include mixins.mq("sp") {
+        font-size: 14px;
+    }
+}

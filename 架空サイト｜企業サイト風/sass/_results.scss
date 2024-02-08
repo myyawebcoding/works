@@ -1,0 +1,163 @@
+@use 'variables' as variables;
+@use 'mixins' as mixins;
+
+.results {
+    margin-top: 126px;
+    margin-left: 40px;
+    background: variables.$main-color;
+    padding: 60px 0 60px 60px;
+
+    @include mixins.mq("sp") {
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 40px 0 40px 16px;
+    }
+
+    .section-title {
+        color: #fff;
+        text-align: left;
+
+        @include mixins.mq("sp") {
+            text-align: center;
+        }
+    }
+
+    
+}
+
+.results-container {
+
+}
+
+.swiper-container {
+
+}
+
+.swiper-slide {
+    margin-top: 60px;
+    width: 400px;
+
+    @include mixins.mq("sp") {
+        margin-top: 40px;
+        width: 274px;
+    }
+}
+
+.results-items {
+    display: flex;
+}
+
+.results-item {
+    width: 400px;
+    height: auto;
+
+    @include mixins.mq("sp") {
+        width: 274px;
+    }
+
+    &:not(:first-child) {
+        margin-left: 40px;
+
+        @include mixins.mq("sp") {
+        margin-left: 20px;
+        }
+    }
+}
+
+.results-item__img-box {
+
+}
+
+.results-item__content {
+    background: #fff;
+    padding: 11px 16px 16px 16px;
+
+    @include mixins.mq("sp") {
+        padding: 12px;
+    }
+}
+
+.results-item__title {
+    font-size: 20px;
+    font-weight: bold;
+
+    @include mixins.mq("sp") {
+        font-size: 14px;
+    }
+}
+
+.results-item__text {
+    margin-top: 10px;
+    line-height: 1.5;
+
+    @include mixins.mq("sp") {
+        font-size: 12px;
+    }
+}
+
+// ボタンの位置
+.swiper-pagination {
+    position: static;
+    text-align: left;
+    margin-top: 44px;
+
+    @include mixins.mq("sp") {
+        margin-top: 24px;
+        text-align: center;
+    }
+}
+// ボタンの大きさなど
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #FFFFFF;
+    opacity: 1;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    &:not(:first-child) {
+        margin: 0 0 0 20px;
+    }
+}
+
+//クリックされた時の外側の〇
+.swiper-pagination-bullet-active {
+    position: relative;
+
+    &::before {
+        content:"";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+    }
+}
+
+
+// ボタン「view all」
+.results-button {
+    width: 289px;
+    text-align: center;
+    margin-top: 40px;
+
+    @include mixins.mq("sp") {
+        max-width: 100%;
+        text-align: center;
+        margin: 24px auto 0;
+    }
+
+    .util-link {
+        color: #fff;
+        border: 1px solid #FFFFFF;
+        padding: 20px 0;
+
+        &:hover {
+            background: #FFFFFF;
+            color: variables.$main-color;
+        }
+    }
+
+}
